@@ -1,0 +1,24 @@
+{
+    "name": "Enable-Defender-RDBMS",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "apiVersion": "2020-09-01",
+    "dependsOn": [],
+    "properties": {
+      "displayName": "Azure Defender for open-source relational databases should be enabled",
+      "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/0a9fbe0d-c5c4-4da8-87d8-f4fd77338835",
+      "parameters": {},
+      "enforcementMode": null,
+      "scope": "${current_scope_resource_id}",
+      "notScopes": [],
+      "nonComplianceMessages": [
+        {
+          "message": "Ensure Azure Defender for open-source relational databases is enabled to protect your databases from security threats."
+        }
+      ]
+    },
+    "location": "${default_location}",
+    "identity": {
+      "type": "None"
+    }
+  }
+  

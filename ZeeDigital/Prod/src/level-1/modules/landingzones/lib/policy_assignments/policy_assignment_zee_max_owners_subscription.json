@@ -1,0 +1,24 @@
+{
+    "name": "Max-Owners-Subscription",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "apiVersion": "2020-09-01",
+    "dependsOn":[],
+    "properties": {
+      "displayName": "A maximum of 3 owners should be designated for subscriptions",
+      "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/4f11b553-d42e-4e3a-89be-32ca364cad4c", 
+      "parameters": {},
+      "enforcementMode": null,
+      "nonComplianceMessages": [
+        {
+            "message": "The subscription has more than 3 owners, which is not allowed."
+        }
+      ],
+      "scope": "${current_scope_resource_id}",
+      "notScopes": []
+    },
+    "location": "${default_location}",
+    "identity": {
+    "type": "None"
+  }
+  }
+  

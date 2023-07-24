@@ -1,0 +1,125 @@
+{
+    "resources": [
+        {
+          "name": "[concat(parameters('factoryName'), '/CopyDataFromstgTF03')]",
+          "type": "Microsoft.DataFactory/factories/pipelines",
+          "apiVersion": "2018-06-01",
+          "properties": {
+            "activities": [
+              {
+                "name": "CopyDataFromstgTF03",
+                "type": "Copy",
+                "dependsOn": [],
+                "policy": {
+                  "timeout": "0.12:00:00",
+                  "retry": 0,
+                  "retryIntervalInSeconds": 30,
+                  "secureOutput": false,
+                  "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                  "source": {
+                    "type": "DelimitedTextSource",
+                    "storeSettings": {
+                      "type": "AzureBlobStorageReadSettings",
+                      "recursive": true,
+                      "wildcardFileName": "*",
+                      "enablePartitionDiscovery": false
+                    },
+                    "formatSettings": {
+                      "type": "DelimitedTextReadSettings"
+                    }
+                  },
+                  "sink": {
+                    "type": "DelimitedTextSink",
+                    "storeSettings": {
+                      "type": "AzureBlobStorageWriteSettings"
+                    },
+                    "formatSettings": {
+                      "type": "DelimitedTextWriteSettings",
+                      "quoteAllText": true,
+                      "fileExtension": ".txt"
+                    }
+                  },
+                  "enableStaging": false,
+                  "translator": {
+                    "type": "TabularTranslator",
+                    "typeConversion": true,
+                    "typeConversionSettings": {
+                      "allowDataTruncation": true,
+                      "treatBooleanAsNumber": false
+                    }
+                  }
+                },
+                "inputs": [
+                  "dsSource"
+                ],
+                "outputs": [
+                  "dsDestination"
+                ]
+              }
+            ],
+            "policy": {
+              "elapsedTimeMetric": {},
+              "cancelAfter": {}
+            },
+            "annotations": []
+          },
+          "dependsOn": [
+            "[concat(variables('factoryId'), '/datasets/dsSource')]",
+            "[concat(variables('factoryId'), '/datasets/dsDestination')]"
+          ]
+        },
+        {
+          "name": "[concat(parameters('factoryName'), '/dsSource')]",
+          "type": "Microsoft.DataFactory/factories/datasets",
+          "apiVersion": "2018-06-01",
+          "properties": {
+            "linkedServiceName": {
+              "referenceName": "[parameters('storagelinkedservice1')]",
+              "type": "LinkedServiceReference"
+            },
+            "annotations": [],
+            "type": "DelimitedText",
+            "typeProperties": {
+              "location": {
+                "type": "AzureBlobStorageLocation",
+                "container": "source"
+              },
+              "columnDelimiter": ",",
+              "escapeChar": "\\",
+              "firstRowAsHeader": true,
+              "quoteChar": "\""
+            },
+            "schema": []
+          },
+          "dependsOn": []
+        },
+        {
+          "name": "[concat(parameters('factoryName'), '/dsDestination')]",
+          "type": "Microsoft.DataFactory/factories/datasets",
+          "apiVersion": "2018-06-01",
+          "properties": {
+            "linkedServiceName": {
+              "referenceName": "[parameters('storagelinkedservice1')]",
+              "type": "LinkedServiceReference"
+            },
+            "annotations": [],
+            "type": "DelimitedText",
+            "typeProperties": {
+              "location": {
+                "type": "AzureBlobStorageLocation",
+                "container": "destination"
+              },
+              "columnDelimiter": ",",
+              "escapeChar": "\\",
+              "firstRowAsHeader": true,
+              "quoteChar": "\""
+            },
+            "schema": []
+          },
+          "dependsOn": []
+        }
+    ]
+}

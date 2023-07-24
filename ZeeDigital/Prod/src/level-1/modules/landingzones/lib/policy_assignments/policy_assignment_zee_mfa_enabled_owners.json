@@ -1,0 +1,24 @@
+{
+    "name": "MFA-Enabled-Owners",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "apiVersion": "2020-09-01",
+    "dependsOn":[],
+    "properties": {
+      "displayName": "Accounts with owner permissions on Azure resources should be MFA enabled",
+      "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e3e008c3-56b9-4133-8fd7-d3347377402a",
+      "parameters": {},
+      "enforcementMode": null,
+      "scope": "${current_scope_resource_id}", 
+      "notScopes": [],
+      "nonComplianceMessages": [
+        {
+          "message": "Owners with non-MFA enabled accounts are not allowed to have permissions on Azure resources."
+        }
+      ]
+    },
+    "location": "${default_location}",
+    "identity": {
+    "type": "None"
+  }
+  }
+  

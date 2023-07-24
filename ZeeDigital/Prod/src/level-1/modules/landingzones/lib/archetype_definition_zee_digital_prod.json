@@ -1,0 +1,93 @@
+{
+    "zee_digital_prod": {
+        "policy_assignments": [
+            "Max-Owners-Subscription",
+            "MFA-Enabled-Owners",
+            "MFA-Enabled-Read",
+            "MFA-Enabled-Write",
+            "Remove-Blocked-Owner",
+            "Remove-Blocked-ReadWrite",
+            "High-Severity-Alert",
+            "Severity-Alert-Owner",
+            "Enable-Network-Watcher",
+            "Enable-Mail-Subscription",
+            "Multi-Owner-Subscription",
+            "Allowlist-Adaptive-App",
+            "System-Updates-UC",
+            "Enable-vTPM-VM",
+            "Install-ChangeTracking",                    
+            "Install-Endpoint",
+            "Enable-Defender-RDBMS",
+            "Resolve-SQL-Vul-Findings",
+            "Config-ChangeTrack-WinVM",
+            "Resolve-Container-Vul",
+            "Enable-Defender-Storage", 
+            "Deploy-Defender-WinVM",
+            "Deploy-WF-Automation",
+            "Adaptive-Hardening-VMs",
+            "Min-Owners-Subscription",
+            "Resolve-Vul-Containers",
+            "Encrypt-VM-Disk-DataFlow"
+
+        ],
+        "policy_definitions": ["Deny-AppServiceWebApp-http"],
+        "policy_set_definitions": [],
+        "role_definitions": [],
+        "archetype_config": {
+            "parameters": {
+                "Install-Endpoint": {
+                    "effect": "AuditIfNotExists"
+                  },
+                "Config-ChangeTrack-WinVM":{
+                    "effect":"DeployIfNotExists",
+                    "listOfApplicableLocations":[
+                        "australiasoutheast",
+                        "australiaeast",
+                        "brazilsouth",
+                        "canadacentral",
+                        "centralindia",
+                        "centralus",
+                        "eastasia",
+                        "eastus2euap",
+                        "eastus",
+                        "eastus2",
+                        "francecentral",
+                        "japaneast",
+                        "koreacentral",
+                        "northcentralus",
+                        "northeurope",
+                        "norwayeast",
+                        "southcentralus",
+                        "southeastasia",
+                        "switzerlandnorth",
+                        "uaenorth",
+                        "uksouth",
+                        "westcentralus",
+                        "westeurope",
+                        "westus",
+                        "westus2"
+                    ]
+                },
+                "Deploy-Defender-WinVM":{
+                    "effect": "AuditIfNotExists",
+                      "PublishersToExclude": [],
+                      "ImageIdsToExclude": []
+                },
+                "Deploy-WF-Automation":{
+                    "automationName":"",
+                    "resourceGroupName":"",
+                    "resourceGroupLocation":"centralindia",
+                    "createResourceGroup":false,
+                    "alertName":"SuspiciousActivityAlert",
+                    "alertSeverities":["High","Medium"]
+
+                },
+                "Encrypt-VM-Disk-DataFlow":{
+                    "effect":"AuditIfNotExists"
+                }
+                  
+            },
+            "access_control": {}
+        }
+    }
+}

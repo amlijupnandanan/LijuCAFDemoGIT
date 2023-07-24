@@ -1,0 +1,21 @@
+{
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "Subnet-VNET-Policy",
+    "properties": {
+      "displayName": "Subnets should have virtual network",
+      "policyType": "Custom",
+      "description": "This policy ensures that all subnets are associated with a virtual network.",
+      "mode": "All",
+      "parameters": {},
+      "policyRule": {
+        "if": {
+          "field": "type",
+          "equals": "Microsoft.Network/virtualNetworks/subnets"
+        },
+        "then": {
+          "effect": "deny"
+        }
+      }
+    }
+  }
+  

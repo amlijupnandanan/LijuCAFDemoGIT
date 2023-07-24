@@ -1,0 +1,24 @@
+{
+    "name": "Enable-Network-Watcher",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "apiVersion": "2020-09-01",
+    "dependsOn": [],
+    "properties": {
+      "displayName": "Network Watcher should be enabled",
+      "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/b6e2945c-0b7b-40f5-9233-7a5323b5cdc6",
+      "parameters": {},
+      "enforcementMode": null,
+      "scope": "${current_scope_resource_id}",
+      "notScopes": [],
+      "nonComplianceMessages": [
+        {
+          "message": "Network Watcher should be enabled to monitor and diagnose network issues."
+        }
+      ]
+    },
+    "location": "${default_location}",
+    "identity": {
+      "type": "None"
+    }
+  }
+  

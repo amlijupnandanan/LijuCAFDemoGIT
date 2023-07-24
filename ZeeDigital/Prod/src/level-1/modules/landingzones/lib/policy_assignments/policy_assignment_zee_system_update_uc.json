@@ -1,0 +1,24 @@
+{
+    "name": "System-Updates-UC",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "apiVersion": "2020-09-01",
+    "dependsOn": [],
+    "properties": {
+      "displayName": "[Preview]: System updates should be installed on your machines (powered by Update Center)",
+      "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/f85bf3e0-d513-442e-89c3-1784ad63382b",
+      "parameters": {},
+      "enforcementMode": null,
+      "scope": "${current_scope_resource_id}",
+      "notScopes": [],
+      "nonComplianceMessages": [
+        {
+          "message": "Ensure system updates are installed on your machines to keep them up-to-date and secure (powered by Update Center)."
+        }
+      ]
+    },
+    "location": "${default_location}",
+    "identity": {
+      "type": "None"
+    }
+  }
+  

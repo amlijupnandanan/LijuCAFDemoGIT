@@ -1,0 +1,23 @@
+{
+  "name": "Resolve-SQL-Vul-Findings",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "apiVersion": "2020-09-01",
+  "dependsOn": [],
+  "properties": {
+    "displayName": "SQL databases should have vulnerability findings resolved",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/feedbf84-6b99-488c-acc2-71c829aa5ffc",
+    "parameters": {},
+    "enforcementMode": null,
+    "scope": "${current_scope_resource_id}",
+    "notScopes": [],
+    "nonComplianceMessages": [
+      {
+        "message": "Ensure vulnerability findings in SQL databases are resolved to enhance database security and protection."
+      }
+    ]
+  },
+  "location": "${default_location}",
+  "identity": {
+    "type": "None"
+  }
+}

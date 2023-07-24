@@ -1,0 +1,24 @@
+{
+    "name": "Min-Owners-Subscription",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "apiVersion": "2020-09-01",
+    "dependsOn": [],
+    "properties": {
+      "displayName": "There should be more than one owner assigned to your subscription",
+      "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/09024ccc-0c5f-475e-9457-b7c0d9ed487b",
+      "parameters": {},
+      "enforcementMode": null,
+      "scope": "${current_scope_resource_id}",
+      "notScopes": [],
+      "nonComplianceMessages": [
+        {
+          "message": "Ensure that your subscription has more than one owner assigned to it for better security and management."
+        }
+      ]
+    },
+    "location": "${default_location}",
+    "identity": {
+      "type": "None"
+    }
+  }
+  

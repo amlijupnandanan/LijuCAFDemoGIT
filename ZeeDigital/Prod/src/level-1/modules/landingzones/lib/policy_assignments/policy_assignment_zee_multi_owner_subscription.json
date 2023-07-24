@@ -1,0 +1,24 @@
+{
+    "name": "Multi-Owner-Subscription",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "apiVersion": "2020-09-01",
+    "dependsOn": [],
+    "properties": {
+      "displayName": "There should be more than one owner assigned to subscriptions",
+      "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/09024ccc-0c5f-475e-9457-b7c0d9ed487b",
+      "parameters": {},
+      "enforcementMode": null,
+      "scope": "${current_scope_resource_id}",
+      "notScopes": [],
+      "nonComplianceMessages": [
+        {
+          "message": "There should be more than one owner assigned to the subscription for redundancy and recovery purposes."
+        }
+      ]
+    },
+    "location": "${default_location}",
+    "identity": {
+      "type": "None"
+    }
+  }
+  

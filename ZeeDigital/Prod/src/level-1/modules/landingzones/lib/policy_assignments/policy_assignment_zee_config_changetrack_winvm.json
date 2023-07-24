@@ -1,0 +1,57 @@
+{
+    "name": "Config-ChangeTrack-WinVM",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "apiVersion": "2020-09-01",
+    "dependsOn": [],
+    "properties": {
+      "displayName": "[Preview]: Configure ChangeTracking Extension for Windows virtual machines",
+      "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/f08f556c-12ff-464d-a7de-40cb5b6cccec",
+      "parameters": {
+        "effect": {
+          "value": "DeployIfNotExists"
+        },
+        "listOfApplicableLocations": {
+          "value": [
+            "australiasoutheast",
+            "australiaeast",
+            "brazilsouth",
+            "canadacentral",
+            "centralindia",
+            "centralus",
+            "eastasia",
+            "eastus2euap",
+            "eastus",
+            "eastus2",
+            "francecentral",
+            "japaneast",
+            "koreacentral",
+            "northcentralus",
+            "northeurope",
+            "norwayeast",
+            "southcentralus",
+            "southeastasia",
+            "switzerlandnorth",
+            "uaenorth",
+            "uksouth",
+            "westcentralus",
+            "westeurope",
+            "westus",
+            "westus2"
+          ]
+        }
+      },
+      "enforcementMode": null,
+      "scope": "${current_scope_resource_id}",
+      "notScopes": [],
+      "nonComplianceMessages": [
+        {
+          "message": "Ensure ChangeTracking extension is configured on Windows virtual machines to track changes and enhance security."
+        }
+      ]
+    },
+    "location": "${default_location}",
+    "identity": {
+      "type": "SystemAssigned"
+    }
+  }
+  

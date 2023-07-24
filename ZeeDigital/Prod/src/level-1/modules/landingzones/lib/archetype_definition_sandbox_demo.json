@@ -1,0 +1,23 @@
+{
+    "sandbox-demo": {
+      "policy_assignments": ["Deny-VM-Size"],
+      "policy_definitions": [ "Deny-NIC-NSG"],
+      "policy_set_definitions": [],
+      "role_definitions": [],
+      "archetype_config": {
+        "parameters": {
+            "Enforce-Resource-Tags": {
+                "Owner": "Liju P Nandanan",
+                "Department":"IT"
+            },
+            "Deny-VM-Size" :{
+              "listOfAllowedSKUs":["Standard_A4m_v2"]
+            }
+            
+        },
+
+        "access_control": {
+        }
+      }
+    }
+  }

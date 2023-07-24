@@ -1,0 +1,19 @@
+{
+    "name": "Subnet-VNET-Policy",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "apiVersion": "2019-09-01",
+    "properties": {
+      "displayName": "Subnets should have virtual network",
+      "description": "Enforces that all subnets are associated with a virtual network",
+      "policyDefinitionId": "${root_scope_resource_id}/providers/Microsoft.Authorization/policyDefinitions/Subnet-VNET-Policy",
+      "parameters": {},
+      "metadata": {
+        "assignedBy": "Terraform"
+      }
+    },
+    "location": "${default_location}",
+    "identity": {
+        "type": "SystemAssigned"
+      }
+  }
+  

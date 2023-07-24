@@ -1,0 +1,34 @@
+{
+    "name": "Deploy-Defender-WinVM",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "apiVersion": "2020-09-01",
+    "dependsOn": [],
+    "properties": {
+      "displayName": "[Preview]: Deploy Microsoft Defender for Endpoint agent on Windows virtual machines",
+      "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1ec9c2c2-6d64-656d-6465-3ec3309b8579",
+      "parameters": {
+        "effect": {
+          "value": "DeployIfNotExists"
+        },
+        "PublishersToExclude": {
+          "value": []
+        },
+        "ImageIdsToExclude": {
+          "value": []
+        }
+      },
+      "enforcementMode": null,
+      "scope": "${current_scope_resource_id}",
+      "notScopes": [],
+      "nonComplianceMessages": [
+        {
+          "message": "Ensure Microsoft Defender for Endpoint agent is deployed on Windows virtual machines to enhance endpoint security (powered by Update Center)."
+        }
+      ]
+    },
+    "location": "${default_location}",
+    "identity": {
+      "type": "SystemAssigned"
+    }
+  }
+  

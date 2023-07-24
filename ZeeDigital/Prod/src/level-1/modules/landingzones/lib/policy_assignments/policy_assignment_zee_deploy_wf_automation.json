@@ -1,0 +1,53 @@
+{
+    "name": "Deploy-WF-Automation",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "apiVersion": "2020-09-01",
+    "dependsOn": [],
+    "properties": {
+      "displayName": "Deploy Workflow Automation for Microsoft Defender for Cloud alerts",
+      "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/f1525828-9a90-4fcf-be48-268cdd02361e",
+      "parameters": {
+        "automationName": {
+          "value": "YourAutomationName"
+        },
+        "resourceGroupName": {
+          "value": "YourResourceGroupName"
+        },
+        "resourceGroupLocation": {
+          "value": "${default_location}"
+        },
+        "createResourceGroup": {
+          "value": true
+        },
+        "alertName": {
+          "value": ""
+        },
+        "alertSeverities": {
+          "value": [
+            "High",
+            "Medium",
+            "Low"
+          ]
+        },
+        "logicAppResourceId": {
+          "value": "YourLogicAppResourceId"
+        },
+        "logicAppTrigger": {
+          "value": "Manual (Incoming HTTP request)"
+        }
+      },
+      "enforcementMode": null,
+      "scope": "${current_scope_resource_id}",
+      "notScopes": [],
+      "nonComplianceMessages": [
+        {
+          "message": "Ensure Workflow Automation is deployed for Microsoft Defender for Cloud alerts to streamline incident response and resolution."
+        }
+      ]
+    },
+    "location": "${default_location}",
+    "identity": {
+      "type": "SystemAssigned"
+    }
+  }
+  

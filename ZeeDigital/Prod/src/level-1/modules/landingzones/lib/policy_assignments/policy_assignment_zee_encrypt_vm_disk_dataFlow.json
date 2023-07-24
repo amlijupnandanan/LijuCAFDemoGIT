@@ -1,0 +1,34 @@
+{
+    "name": "Encrypt-VM-Disk-DataFlow",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "apiVersion": "2020-09-01",
+    "dependsOn": [],
+    "properties": {
+      "displayName": "Virtual machines should encrypt temp disks, caches, and data flows between Compute and Storage resources",
+      "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/0961003e-5a0a-4549-abde-af6a37f2724d",
+      "parameters": {
+        "effect": {
+          "type": "String",
+          "metadata": {
+            "displayName": "Effect",
+            "description": "Enable or disable the execution of the policy"
+          },
+          "allowedValues": ["AuditIfNotExists", "Disabled"],
+          "defaultValue": "AuditIfNotExists"
+        }
+      },
+      "enforcementMode": "null",
+      "scope": "${current_scope_resource_id}",
+      "notScopes": [],
+      "nonComplianceMessages": [
+        {
+          "message": "Ensure that virtual machines have encrypted temp disks, caches, and data flows between Compute and Storage resources to enhance data security."
+        }
+      ]
+    },
+    "location": "${default_location}",
+    "identity": {
+      "type": "SystemAssigned"
+    }
+  }
+  

@@ -1,0 +1,28 @@
+{
+    "name": "Install-Endpoint",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "apiVersion": "2020-09-01",
+    "dependsOn": [],
+    "properties": {
+      "displayName": "Cloud Services (extended support) role instances should have an endpoint protection solution installed",
+      "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1ec9c2c2-6d64-656d-6465-3ec3309b8579",
+      "parameters": {
+        "effect": {
+            "value": "AuditIfNotExists"  
+          }
+      },
+      "enforcementMode": null,
+      "scope": "${current_scope_resource_id}",
+      "notScopes": [],
+      "nonComplianceMessages": [
+        {
+          "message": "Ensure an endpoint protection solution is installed on Cloud Services (extended support) role instances to enhance security and protection."
+        }
+      ]
+    },
+    "location": "${default_location}",
+    "identity": {
+      "type": "SystemAssigned"
+    }
+  }
+  

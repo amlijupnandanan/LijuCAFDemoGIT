@@ -1,0 +1,24 @@
+{
+    "name": "Enable-Defender-Storage",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "apiVersion": "2020-09-01",
+    "dependsOn": [],
+    "properties": {
+      "displayName": "Configure basic Microsoft Defender for Storage to be enabled (Activity Monitoring only)",
+      "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/17bc14a7-92e1-4551-8b8c-80f36953e166",
+      "parameters": {},
+      "enforcementMode": null,
+      "scope": "${current_scope_resource_id}",
+      "notScopes": [],
+      "nonComplianceMessages": [
+        {
+          "message": "Ensure basic Microsoft Defender for Storage is enabled with Activity Monitoring only to enhance security for your storage resources."
+        }
+      ]
+    },
+    "location": "${default_location}",
+    "identity": {
+      "type": "SystemAssigned"
+    }
+  }
+  
